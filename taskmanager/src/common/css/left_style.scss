@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.left_content {
+    float: left;
+    width: 10%;
+    min-width: 170px;
+    height: 100vh;
+    min-height: 900px;
+    background-color: rgb(32, 74, 165);
+}
+.left_content ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+.left_content li {
+    margin: 0px;
+    height: 40px;
+    padding-top: 15px;
+}
+.menu_select {
+    background-color: rgb(231, 231, 231);
+}
+.left_content a {
+    color: white;
+    text-decoration:none;
+    margin-left: 10px;
+    display: block;
+}
+.menu_select a {
+    color: rgba(33, 24, 165 ,1);
+}

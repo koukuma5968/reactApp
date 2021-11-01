@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+/* ユーザ作成 */
+.user {
+    height: 100vh;
+    min-height: 890px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(100, 168, 231);
+}
+.user_title {
+    margin: 0;
+    width: 800px;
+    height: auto;
+    padding: 15px 20px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+    display: inline-grid;
+    border: 1px solid rgb(212, 208, 208);
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 20px gray;
+}
+.user_content {
+    margin: 0;
+    width: 800px;
+    height: auto;
+    padding: 30px 20px;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+    display: inline-grid;
+    border: 1px solid rgb(212, 208, 208);
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 20px gray;
+}
+.user_item {
+    margin: 10px;
+    width: auto;
+    height: 40px;
+    border-radius: 5px;
+}
+.user_name_div {
+    margin: 10px;
+    width: auto;
+    height: 40px;
+}
+.user_name_item {
+    width: 45%;
+    height: 40px;
+    border-radius: 5px;
+}
+.user_create_bt {
+    width: 25%;
+    height: 50px;
+}
+/* ユーザ作成完了 */
+.user_result_content {
+    margin: 0;
+    width: 500px;
+    height: auto;
+    padding: 30px 20px;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+    display: inline-grid;
+    border: 1px solid rgb(212, 208, 208);
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 20px gray;
+}
+.user_result_item {
+    margin: auto;
+}
+.user_result_bt {
+    width: 200px;
+    height: 50px;
+}
+/* project作成 */
+.project_main_content {
+    padding: 10px;
+    margin: 10px;
+    width:  100%;
+    min-width: 500px;
+    background-color: rgb(231, 231, 231);
+}
+.project_content {
+    margin: 0;
+    width: 30%;
+    height: auto;
+    padding: 30px 20px;
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 10%);
+    display: inline-grid;
+    border: 1px solid rgb(212, 208, 208);
+    border-radius: 10px;
+    background-color: white;
+}
+.project_detail {
+    margin: 10x;
+}
+.project_div {
+    padding: 15px;
+    width: auto;
+    height: 40px;
+    display: flex;
+}
+.project_item {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+}
+.project_day {
+    margin: auto;
+    width: 50%;
+    padding-left: 20px;
+    text-align: left;
+    vertical-align: auto;
+}
+.project_cal_item {
+    margin: auto;
+    width: auto;
+}
+.project_bt {
+    width: 100%;
+    height: 50px;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DispatchRouter from './common/DispatchRouter.jsx';
+import DispatchRouter from './page/common/DispatchRouter.jsx';
 
 ReactDOM.render(
     <DispatchRouter />,

@@ -6,16 +6,45 @@ module.exports = {
   mode: "development",
   entry: "./src/index.jsx",
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      exclude: /(node_modules|bower_components)/,
-      use: [{
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-react', '@babel/preset-env']
-        }
-      }]
-    }]
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-react', '@babel/preset-env']
+            }
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+            {
+              loader: 'css-loader',
+              options :{
+                modules : true
+              }
+            }
+        ]
+      },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        use: [
+          'style-loader',
+            {
+              loader: 'css-loader',
+              options :{
+                modules : false
+              }
+            }
+        ]
+      }
+    ]
   },
   output: {
     path: path.join(__dirname, './dist'),
@@ -24,11 +53,11 @@ module.exports = {
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
-      publicPath: '/task/',
+      publicPath: '/chartview/',
       serveIndex: true,
     },
     historyApiFallback: {
-      index: '/task/'
+      index: '/chartview/'
     }
   },
   plugins: debug ? [] : [

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.top {
+    background-color: rgb(207, 235, 245);
+    width: 100%;
+    min-width: 800px;
+    height: 55px;
+    display: grid;
+    border-bottom: 1px solid rgb(184, 182, 182);
+}
+.top_icon_image {
+    background-image: url(../img/calender.png);
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+}
+.login_user {
+    padding: 15px 30px;
+}
