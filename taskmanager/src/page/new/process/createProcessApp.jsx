@@ -6,7 +6,7 @@ import CalendarPopup from '../../common/CalendarPopup.jsx';
 import c_css from '../../../common/css/common_style.scss';
 import css from '../../../common/css/new_style.scss';
 
-class CreateProject extends React.Component {
+class CreateTask extends React.Component {
     constructor(props){
         super(props);
         this.startPopup = this.startPopup.bind(this);
@@ -46,7 +46,7 @@ class CreateProject extends React.Component {
         return (
             <div className={css.project_main_content}>
                 <div className={css.project_content}>
-                    <label>プロジェクト新規作成</label>
+                    <label>プロセス追加</label>
 
                     <hr />
 
@@ -78,4 +78,4 @@ class CreateProject extends React.Component {
         );
     }
 }
-export default CreateProject
+export default CreateTask

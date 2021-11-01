@@ -16,6 +16,8 @@
     min-width: 500px;
     background-color: rgb(231, 231, 231);
 }
+
+/* プロジェクト一覧 */
 .project_item {
     display: block;
     border: 1px solid rgb(212, 208, 208);
@@ -31,4 +33,43 @@
 .downchart_container {
     width: 97%;
     height: 250px;
+}
+
+/* タスク一覧 */
+.task_sort_doby {
+    display: flex;
+}
+.task_sort_item {
+    width: 300px;
+    padding: 10px 40px 10px 0px;
+}
+.task_body {
+    display: flex;
+    padding-top: 20px;
+    height: auto;
+    width: 100%;
+}
+.task_item {
+    background-color: white;
+    border: 1px solid rgb(212, 208, 208);
+    margin: 10px 20px 10px 0px;
+    width: 100%;
+    height: 650px;
+}
+.task_item_title {
+    padding: 10px 0px 0px 20px;
+    vertical-align: middle;
+    font-size: large;
+}
+.task_item_line_yellow {
+    border-color: yellow;
+}
+.task_item_line_orange {
+    border-color: orange;
+}
+.task_item_line_blue {
+    border-color: blue;
+}
+.task_item_line_green {
+    border-color: green;
 }
