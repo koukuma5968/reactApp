@@ -13,14 +13,19 @@ class Home extends React.Component {
 
     constructor(props){
         super(props)
-	}
+        this.state = {
+            projectlist: this.props.location.state.project,
+            userMng: this.props.location.state.userMng,
+            groupoption: this.props.location.state.groupoption,
+        }
+    }
 
     render() {
         return (
             <div>
                 <Top />
                 <div className={css.main}>
-                    <SideMenu />
+                    <SideMenu data={this.state}/>
                     <Switch>
                         <Route exact path="/chartview/home/dashboard" component={Project} />
                         <Route exact path="/chartview/home/new/project" component={CreateProject} />

@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class InputCheck extends React.Component {
+    /* 必須チェック */
+    checkRequired = (value) => {
+        return value != null && value != '';
+    }
     /* 半角英数チェック */
     checkAlphaNumber = (value) => {
         return value.match(/^[a-zA-Z0-9]+$/);
@@ -16,4 +20,4 @@ class InputCheck extends React.Component {
         return value.match(/^[a-zA-Z0-9@#&]+$/);
     }
 }
-export default InputCheck
+export default new InputCheck

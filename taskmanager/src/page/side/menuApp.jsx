@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types';
 import Header from '../common/header.jsx';
 import c_css from '../../common/css/common_style.scss';
 import css from '../../common/css/left_style.scss';
 
 class Menu extends React.Component {
+    constructor(props){
+        super(props);
+    }
     ShowLocation = () => {
         const location = useLocation();
     }
@@ -15,10 +19,10 @@ class Menu extends React.Component {
             <div className={css.left_content}>
             <ul onLoad={this.ShowLocation}>
                 <li className={location.pathname == '/chartview/home/dashboard' ? css.menu_select : ''}>
-                    <Link to='/chartview/home/dashboard' >ダッシュボード</Link>
+                    <Link to='/chartview/home/dashboard'>ダッシュボード</Link>
                 </li>
                 <li className={location.pathname == '/chartview/home/new/project' ? css.menu_select : ''}>
-                    <Link to='/chartview/home/new/project' >プロジェクト作成</Link>
+                    <Link to={{pathname: '/chartview/home/new/project', state: { data: this.props.data }}} >プロジェクト作成</Link>
                 </li>
                 <li className={location.pathname == '/chartview/home/tasklist' ? css.menu_select : ''}>
                     <Link to='/chartview/home/tasklist'>タスク一覧</Link>
