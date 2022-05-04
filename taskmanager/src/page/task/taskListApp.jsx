@@ -6,13 +6,16 @@ import c_css from '../../common/css/common_style.scss';
 import css from '../../common/css/main_style.scss';
 
 class TaskList extends React.Component {
-
+    constructor(props){
+        super(props);
+        this.state = {
+            projectsel:'',
+        }
+    }
     render() {
         const options = [
-            { value: 'pikachu', label: 'ピカチュウ' },
-            { value: 'bulbasaur', label: 'フシギダネ' },
-            { value: 'charmander', label: 'ヒトカゲ' },
-            { value: 'squirtle', label: 'ゼニガメ' },
+            { value: 'asc', label: '昇順' },
+            { value: 'desc', label: '降順' },
         ]
         const CHARACTERS = [
             {
@@ -46,19 +49,24 @@ class TaskList extends React.Component {
             <div className={css.task_sort_doby}>
                 <div className={css.task_sort_item}>
                     <span>プロジェクト</span>
-                    <Select options={options} />
+                    <Select options={this.props.location.state.projectoption} 
+                        onChange={event => this.setState({projectsel: event.value})} />
                 </div>
+                {/*
                 <div className={css.task_sort_item}>
                     <span>プロセス</span>
                     <Select options={options} />
                 </div>
+                */}
                 <div className={css.task_sort_item}>
                     <span>担当者</span>
-                    <Select options={options} />
+                    <Select options={this.props.location.state.userMng.id} 
+                        onChange={event => this.setState({usersel: event.value})} />
                 </div>
                 <div className={css.task_sort_item}>
                     <span>期限</span>
-                    <Select options={options} />
+                    <Select options={options} 
+                        onChange={event => this.setState({projectsel: event.value})} />
                 </div>
             </div>
             <div className={css.task_body}>

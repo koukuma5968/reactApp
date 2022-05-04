@@ -10,13 +10,13 @@ class Project extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            projectlist: this.props.location.state.project,
+            projectlist: this.props.location.state.projectlist,
             userMng: this.props.location.state.userMng,
             groupdata: this.props.location.state.groupdata
         }
         console.log('project')
         console.log(this.props)
-        console.log(this.props.location.state.project)
+        console.log(this.props.location.state.projectlist)
         console.log(this.props.location.state.userMng)
         console.log(this.props.location.state.groupdata)
     }
@@ -31,17 +31,21 @@ class Project extends React.Component {
                         <hr />
                         <div className={css.project_ditail}>
                             <div className={`${c_css.p_t10} ${c_css.p_l10}`}>
-                                <span>期限： {project.startDay}　終了日 {project.endDay}</span>
-                                <span className={`${c_css.flot_r} ${c_css.p_r30}`}>メンバ；{this.state.userMng.name}</span>
+                                <span>期限： {project.startDay} ～ {project.endDay}</span>
+                                {/*
+                                <span className={`${c_css.flot_r} ${c_css.p_r30}`}>メンバ:{this.state.userMng.userId}</span>
+                                */}
                             </div>
                             <div className={`${c_css.p_t10} ${c_css.p_l10}`}>
-                                <span className={c_css.p_r20}>タスク総数：100</span>
-                                <span className={c_css.p_r20}>タスク残数：100</span>
+                                <span className={c_css.p_r20}>タスク総数：{project.task_count}</span>
+                                <span className={c_css.p_r20}>タスク残数：{project.task_remain_count}</span>
                                 <span>進捗率：0%</span>
                             </div>
+                            {/*
                             <div className={`${css.downchart_container} ${c_css.p_t30}`}>
                                 <Downchart />
                             </div>
+                            */}
                         </div>
                     </div>
                 </div>

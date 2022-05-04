@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './common/header.jsx';
+import Form from './common/submitform.jsx';
 import c_css from '../common/css/common_style.scss';
 import css from '../common/css/login_style.scss';
 
@@ -23,7 +23,7 @@ class Login extends React.Component {
         });
     }
     render() {
-        const head = new Header(this.props);
+        const form = new Form(this.props);
         return (
         <div className={css.login}>
             <div className={css.login_content}>
@@ -33,7 +33,7 @@ class Login extends React.Component {
                 <input className={`${css.login_item} ${css.login_pass_image}`} type="password" id="password" value={this.pass} 
                     maxLength="12" onChange={event => this.upPass(event)} placeholder="パスワード" />
                 <div>
-                    <input className={`${css.login_item_bt} ${c_css.bt_color}`} type="button" value="ログイン" onClick={() => head.login(this.state)} />
+                    <input className={`${css.login_item_bt} ${c_css.bt_color}`} type="button" value="ログイン" onClick={() => form.login(this.state)} />
                 </div>
                 <div>
                     <a className={css.login_item_anc} href="">パスワードを忘れた場合</a>
@@ -43,7 +43,7 @@ class Login extends React.Component {
                     <hr className={css.line_l} />or<hr className={css.line_r} />
                 </div>
                 <span className={c_css.p_t20}></span>
-                <input className={`${css.create_bt} ${c_css.bt_color}`} type="button" value="新規ユーザ登録" onClick={head.create} />
+                <input className={`${css.create_bt} ${c_css.bt_color}`} type="button" value="新規ユーザ登録" onClick={form.create} />
             </div>
         </div>
         );

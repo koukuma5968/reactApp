@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { format } from "date-fns";
-import Header from '../../common/header.jsx';
+import Select from 'react-select';
+import SubmitForm from '../../common/submitform.jsx';
 import CalendarPopup from '../../common/CalendarPopup.jsx';
 import c_css from '../../../common/css/common_style.scss';
 import css from '../../../common/css/new_style.scss';
@@ -14,11 +15,13 @@ class CreateTask extends React.Component {
         this.setStartDay = this.setStartDay.bind(this);
         this.setEndDay = this.setEndDay.bind(this);
         this.state = {
-            projectName: '',
-            starday: '',
-            endday: '',
+            taskName: '',
             isStartPop: false,
             isEndPop: false,
+            startDay: '',
+            endDay: '',
+            projectsel:'',
+            procsel:'',
         }
     }
     startPopup() {
@@ -28,21 +31,25 @@ class CreateTask extends React.Component {
         this.setState({isEndPop: true});
     }
     setStartDay = (defaultValue) => {
-        console.log(format(defaultValue, "yyyyMMdd"));
+        this.setState({isStartPop: false});
         this.setState({
-            isStartPop: false,
-            starday: format(defaultValue, "yyyyMMdd"),
+            startDay: format(defaultValue, "yyyy/MM/dd"),
         });
     }
     setEndDay = (defaultValue) => {
-        console.log(format(defaultValue, "yyyyMMdd"));
+        this.setState({isEndPop: false});
         this.setState({
-            isEndPop: false,
-            endday: format(defaultValue, "yyyyMMdd"),
+            endDay: format(defaultValue, "yyyy/MM/dd"),
         });
     }
     render() {
-        const head = new Header(this.props);
+        const procoptions = [
+            { value: '0', label: '高' },
+            { value: '1', label: '中' },
+            { value: '2', label: '低' },
+            { value: '9', label: 'なし' },
+        ]
+        const form = new SubmitForm(this.props);
         return (
             <div className={css.project_main_content}>
                 <div className={css.project_content}>
@@ -51,8 +58,14 @@ class CreateTask extends React.Component {
                     <hr />
 
                     <div className={css.project_div}>
-                        <input className={css.project_item} type="text" value={this.projectName} placeholder="プロジェクト名"
-                            onChange={event => this.setState({projectName: event.target.value})} />
+                        <label className={css.project_item}>プロジェクト選択</label>
+                        <Select className={css.project_item} options={this.props.location.state.projectoption} 
+                        onChange={event => this.setState({projectsel: event.value})} />
+                    </div>
+
+                    <div className={css.project_div}>
+                        <input className={css.project_item} type="text" value={this.taskName} placeholder="タスク名"
+                            onChange={event => this.setState({taskName: event.target.value})} />
                     </div>
 
                     <div className={css.project_div}>
@@ -60,18 +73,24 @@ class CreateTask extends React.Component {
                         { this.state.isStartPop ?
                             <CalendarPopup selectDay={this.setStartDay} />
                         : false}
-                        <input className={`${css.project_item} ${c_css.m_l30}`} type="text" defaultValue={this.state.starday} placeholder="開始日"/>
+                        <input className={`${css.project_item} ${c_css.m_l30}`} type="text" defaultValue={this.state.startDay} placeholder="開始日"/>
                     </div>
                     <div className={css.project_div}>
                         <input className={`${c_css.calender_image}`} type="button" onClick={this.endPopup} />
                         { this.state.isEndPop ?
                             <CalendarPopup selectDay={this.setEndDay} />
                         : false}
-                        <input className={`${css.project_item} ${c_css.m_l30}`} type="text" defaultValue={this.state.endday} placeholder="終了日"/>
+                        <input className={`${css.project_item} ${c_css.m_l30}`} type="text" defaultValue={this.state.endDay} placeholder="終了日"/>
                     </div>
 
                     <div className={css.project_div}>
-                        <input className={`${css.project_bt} ${c_css.flot_r} ${c_css.bt_color}`} type="button" value="登録" onClick={() => head.projectResults(this.state)} />
+                        <label className={css.project_item}>優先度</label>
+                        <Select className={css.project_item} options={procoptions}
+                        onChange={event => this.setState({procsel: event.value})} />
+                    </div>
+                    <div className={css.project_div}>
+                        <input className={`${css.project_bt} ${c_css.flot_r} ${c_css.bt_color}`} type="button" value="登録" 
+                        onClick={() => form.taskResults(this.state,this.props.location.state)} />
                     </div>
                 </div>
             </div>

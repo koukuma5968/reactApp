@@ -4,6 +4,7 @@ const LOGIN_PATH = 'login';
 const CREATE_USER = 'createuser';
 const GET_PROJECT = 'getproject';
 const CREATE_PROJECT = 'createproject';
+const CREATE_TASK = 'createtask';
 
 class ApiService {
     
@@ -36,7 +37,7 @@ class ApiService {
             name: state.projectName,
             startDay: state.startDay,
             endDay: state.endDay,
-            group_id: state.groupdata
+            group_id: state.groupsel
         }
         let updateparam = {
             projectMng: projectMng,
@@ -46,6 +47,21 @@ class ApiService {
         return Httpheder.post(CREATE_PROJECT, updateparam);
     }
 
+    createTask (state, userMng) {
+        let taskMng = {
+            name: state.taskName,
+            startDay: state.startDay,
+            endDay: state.endDay,
+            project_id: state.projectsel,
+            procsel: state.procsel
+        }
+        let updateparam = {
+            taskMng: taskMng,
+            userMng: userMng
+        }
+        console.log('createTask post');
+        return Httpheder.post(CREATE_TASK, updateparam);
+    }
 }
 
 export default new ApiService;

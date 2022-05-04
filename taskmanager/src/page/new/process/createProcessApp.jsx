@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { format } from "date-fns";
-import Header from '../../common/header.jsx';
+import Form from '../../common/submitform.jsx';
 import CalendarPopup from '../../common/CalendarPopup.jsx';
 import c_css from '../../../common/css/common_style.scss';
 import css from '../../../common/css/new_style.scss';
@@ -42,7 +42,7 @@ class CreateTask extends React.Component {
         });
     }
     render() {
-        const head = new Header(this.props);
+        const form = new Form(this.props);
         return (
             <div className={css.project_main_content}>
                 <div className={css.project_content}>
@@ -71,7 +71,7 @@ class CreateTask extends React.Component {
                     </div>
 
                     <div className={css.project_div}>
-                        <input className={`${css.project_bt} ${c_css.flot_r} ${c_css.bt_color}`} type="button" value="登録" onClick={() => head.projectResults(this.state)} />
+                        <input className={`${css.project_bt} ${c_css.flot_r} ${c_css.bt_color}`} type="button" value="登録" onClick={() => form.projectResults(this.state)} />
                     </div>
                 </div>
             </div>

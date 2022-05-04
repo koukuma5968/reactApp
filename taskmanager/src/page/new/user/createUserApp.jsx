@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from '../../common/header.jsx';
+import Form from '../../common/submitform.jsx';
 import c_css from '../../../common/css/common_style.scss';
 import css from '../../../common/css/new_style.scss';
 
@@ -17,7 +17,7 @@ class CreateUser extends React.Component {
         }
     }
     render() {
-        const head = new Header(this.props);
+        const form = new Form(this.props);
         return (
             <div className={css.user}>
                 <div className={css.user_content}>
@@ -61,7 +61,7 @@ class CreateUser extends React.Component {
                     <span className={c_css.p_t20}></span>
 
                     <div>
-                        <input className={`${css.user_create_bt} ${c_css.flot_r} ${c_css.bt_color}`} type="button" value="登録" onClick={() => head.userResults(this.state)} />
+                        <input className={`${css.user_create_bt} ${c_css.flot_r} ${c_css.bt_color}`} type="button" value="登録" onClick={() => form.userResults(this.state)} />
                     </div>
                 </div>
             </div>

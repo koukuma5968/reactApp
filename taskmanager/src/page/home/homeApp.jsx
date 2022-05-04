@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import SideMenu from '../side/menuApp.jsx';
 import Project from '../project/projectApp.jsx';
 import CreateProject from '../new/project/createProjectApp.jsx';
+import CreateTask from '../new/task/createTaskApp.jsx';
 import TaskList from '../task/taskListApp.jsx';
 import Top from '../top/topApp.jsx';
 import c_css from '../../common/css/common_style.scss';
@@ -14,7 +15,8 @@ class Home extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            projectlist: this.props.location.state.project,
+            projectlist: this.props.location.state.projectlist,
+            projectoption: this.props.location.state.projectoption,
             userMng: this.props.location.state.userMng,
             groupoption: this.props.location.state.groupoption,
         }
@@ -23,12 +25,13 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <Top />
+                <Top user={this.state.userMng}/>
                 <div className={css.main}>
                     <SideMenu data={this.state}/>
                     <Switch>
                         <Route exact path="/chartview/home/dashboard" component={Project} />
                         <Route exact path="/chartview/home/new/project" component={CreateProject} />
+                        <Route exact path="/chartview/home/new/task" component={CreateTask} />
                         <Route exact path="/chartview/home/tasklist" component={TaskList} />
                     </Switch>
                 </div>

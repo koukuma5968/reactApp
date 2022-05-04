@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from '../../common/header.jsx';
+import Form from '../../common/submitform.jsx';
 import c_css from '../../../common/css/common_style.scss';
 import css from '../../../common/css/new_style.scss';
 
@@ -9,7 +9,7 @@ class UserResult extends React.Component {
         super(props);
     }
     render() {
-        const head = new Header(this.props);
+        const form = new Form(this.props);
         return (
             <div className={css.user}>
                 <div className={css.user_result_content}>

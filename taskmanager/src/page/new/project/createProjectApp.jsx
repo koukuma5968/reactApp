@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { format } from "date-fns";
 import Select from 'react-select';
-import Header from '../../common/header.jsx';
+import SubmitForm from '../../common/submitform.jsx';
 import CalendarPopup from '../../common/CalendarPopup.jsx';
 import c_css from '../../../common/css/common_style.scss';
 import css from '../../../common/css/new_style.scss';
@@ -24,7 +24,7 @@ class CreateProject extends React.Component {
             projectName: '',
             startDay: '',
             endDay: '',
-            groupdata: ''
+            groupsel: '',
         }
     }
     startPopup() {
@@ -46,7 +46,7 @@ class CreateProject extends React.Component {
         });
     }
     render() {
-        const head = new Header(this.props);
+        const form = new SubmitForm(this.props);
         return (
             <div className={css.project_main_content}>
                 <div className={css.project_content}>
@@ -61,8 +61,8 @@ class CreateProject extends React.Component {
 
                     <div className={css.project_div}>
                         <label className={css.project_item}>グループ選択</label>
-                        <Select className={css.project_item} options={this.props.location.state.data.groupoption} 
-                        onChange={event => this.setState({groupdata: event.value})} />
+                        <Select className={css.project_item} options={this.props.location.state.groupoption} 
+                        onChange={event => this.setState({groupsel: event.value})} />
                     </div>
 
                     <div className={css.project_div}>
@@ -82,7 +82,7 @@ class CreateProject extends React.Component {
 
                     <div className={css.project_div}>
                         <input className={`${css.project_bt} ${c_css.flot_r} ${c_css.bt_color}`} type="button" value="登録" 
-                        onClick={() => head.projectResults(this.state,this.props.location.state.data)} />
+                        onClick={() => form.projectResults(this.state,this.props.location.state)} />
                     </div>
                 </div>
             </div>
