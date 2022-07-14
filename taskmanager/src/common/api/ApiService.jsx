@@ -5,6 +5,7 @@ const CREATE_USER = 'createuser';
 const GET_PROJECT = 'getproject';
 const CREATE_PROJECT = 'createproject';
 const CREATE_TASK = 'createtask';
+const UPDATE_TASK_STATUS = 'updateTaskStatus';
 
 class ApiService {
     
@@ -62,6 +63,15 @@ class ApiService {
         console.log('createTask post');
         return Httpheder.post(CREATE_TASK, updateparam);
     }
+
+    updateTask (statusType, task) {
+        let taskparam = {
+            statusType: statusType,
+            task: task
+        }
+        return Httpheder.post(UPDATE_TASK_STATUS, taskparam);
+    }
+
 }
 
 export default new ApiService;

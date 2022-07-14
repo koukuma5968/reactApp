@@ -56,12 +56,12 @@ class Menu extends React.Component {
                         groupoption: this.props.data.groupoption
                     }}} >タスク一覧</Link>
                 </li>
-                <li className={location.pathname == '/chartview/home/backlog' ? css.menu_select : ''}>
+                {/* <li className={location.pathname == '/chartview/home/backlog' ? css.menu_select : ''}>
                     <Link to="/chartview/home/backlog">バックログ</Link>
                 </li>
                 <li className={location.pathname == '/chartview/home/settings' ? css.menu_select : ''}>
                     <Link to="/chartview/home/settings">設定</Link>
-                </li>
+                </li> */}
             </ul>
         </div>
         );

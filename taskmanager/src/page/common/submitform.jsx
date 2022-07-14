@@ -10,8 +10,6 @@ class SubmitForm extends React.Component {
     }
     /* ログイン時チェック */
     login = (state) => {
-        console.log(state.userid);
-        console.log(this.props);
         if (!InputCheck.checkAlphaNumber(state.userid)) {
             alert('ユーザIDは半角英数で入力してください。');
             return;
@@ -26,13 +24,11 @@ class SubmitForm extends React.Component {
         }
         ApiService.doLoginCheck(state.userid,state.pass)
         .then(usercheck => {
-            console.log(usercheck);
             if (!usercheck.data.check) {
                 alert('ユーザIDまたはパスワードが一致しません。');
                 return;
             }
             ApiService.getproject(usercheck.data.userdata).then(projectret => {
-                console.log(projectret);
                 this.props.history.push({
                     pathname: '/chartview/home/dashboard',
                     state: { 
@@ -78,7 +74,6 @@ class SubmitForm extends React.Component {
         }
         ApiService.createUser(state)
         .then(res => {
-            console.log(res);
             if (res.data == 1) {
                 alert('このユーザIDは使用されています。');
                 return;
@@ -91,11 +86,7 @@ class SubmitForm extends React.Component {
     }
     projectResults = (state, data) => {
         console.log('projectResults')
-        console.log(this.props);
-        console.log(data)
-        console.log(state)
         ApiService.createProject(state, data.userMng).then(projectret => {
-            console.log(projectret);
             this.props.history.push({
                 pathname: '/chartview/home/dashboard',
                 state: { 
@@ -109,11 +100,7 @@ class SubmitForm extends React.Component {
     }
     taskResults = (state, data) => {
         console.log('taskResults')
-        console.log(this.props);
-        console.log(data)
-        console.log(state)
         ApiService.createTask(state, data.userMng).then(projectret => {
-            console.log(projectret);
             this.props.history.push({
                 pathname: '/chartview/home/dashboard',
                 state: { 
@@ -123,6 +110,11 @@ class SubmitForm extends React.Component {
                     groupoption: data.groupoption
                 }
             });
+        });
+    }
+    taskUpdate = (statusType, task) => {
+        console.log('taskUpdate')
+        ApiService.updateTask(statusType, task).then(ret => {
         });
     }
 }

@@ -45,10 +45,10 @@
     padding: 10px 40px 10px 0px;
 }
 .task_body {
-    display: flex;
+    display: -webkit-box;
     padding-top: 20px;
     height: auto;
-    width: 100%;
+    width: 23%;
 }
 .task_item {
     background-color: white;

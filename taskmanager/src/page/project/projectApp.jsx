@@ -39,13 +39,13 @@ class Project extends React.Component {
                             <div className={`${c_css.p_t10} ${c_css.p_l10}`}>
                                 <span className={c_css.p_r20}>タスク総数：{project.task_count}</span>
                                 <span className={c_css.p_r20}>タスク残数：{project.task_remain_count}</span>
-                                <span>進捗率：0%</span>
+                                {/* <span>進捗率：0%</span> */}
                             </div>
-                            {/*
+                            
                             <div className={`${css.downchart_container} ${c_css.p_t30}`}>
-                                <Downchart />
+                                <Downchart dcList={project.downchartList}/>
                             </div>
-                            */}
+                           
                         </div>
                     </div>
                 </div>
