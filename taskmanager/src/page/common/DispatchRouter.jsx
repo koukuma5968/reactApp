@@ -6,8 +6,8 @@ import Home from '../home/homeApp.jsx';
 function DispatchRouter() {
   return (
     <BrowserRouter>
-        <Route exact path='/' component={Login} />
-        <Route exact path='/chartview/home/*' component={Home} />
+        <Route exact path='/task/login' component={Login} />
+        <Route exact path='/task/home/*' component={Home} />
     </BrowserRouter>
   );
 }

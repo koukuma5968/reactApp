@@ -29,10 +29,10 @@ class Home extends React.Component {
                 <div className={css.main}>
                     <SideMenu data={this.state}/>
                     <Switch>
-                        <Route exact path="/chartview/home/dashboard" component={Project} />
-                        <Route exact path="/chartview/home/new/project" component={CreateProject} />
-                        <Route exact path="/chartview/home/new/task" component={CreateTask} />
-                        <Route exact path="/chartview/home/tasklist" component={TaskList} />
+                        <Route exact path="/task/home/dashboard" component={Project} />
+                        <Route exact path="/task/home/new/project" component={CreateProject} />
+                        <Route exact path="/task/home/new/task" component={CreateTask} />
+                        <Route exact path="/task/home/tasklist" component={TaskList} />
                     </Switch>
                 </div>
             </div>

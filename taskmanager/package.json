@@ -2,7 +2,8 @@
   "name": "taskmanager",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.jsx",
+  "homepage": "./",
   "scripts": {
     "ver": "webpack -v",
     "start": "npx webpack serve --config webpack.config.js --mode development --open",

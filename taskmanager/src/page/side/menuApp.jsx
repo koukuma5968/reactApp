@@ -20,8 +20,8 @@ class Menu extends React.Component {
         return (
             <div className={css.left_content}>
             <ul onLoad={this.ShowLocation}>
-                <li className={location.pathname == '/chartview/home/dashboard' ? css.menu_select : ''}>
-                    <Link to={{pathname: '/chartview/home/dashboard', 
+                <li className={location.pathname == '/task/home/dashboard' ? css.menu_select : ''}>
+                    <Link to={{pathname: '/task/home/dashboard', 
                     state: { 
                         projectlist: this.props.data.projectlist,
                         projectoption: this.props.data.projectoption,
@@ -29,8 +29,8 @@ class Menu extends React.Component {
                         groupoption: this.props.data.groupoption
                     }}}>ダッシュボード</Link>
                 </li>
-                <li className={location.pathname == '/chartview/home/new/project' ? css.menu_select : ''}>
-                    <Link to={{pathname: '/chartview/home/new/project', 
+                <li className={location.pathname == '/task/home/new/project' ? css.menu_select : ''}>
+                    <Link to={{pathname: '/task/home/new/project', 
                     state: { 
                         projectlist: this.props.data.projectlist,
                         projectoption: this.props.data.projectoption,
@@ -38,8 +38,8 @@ class Menu extends React.Component {
                         groupoption: this.props.data.groupoption
                     }}} >プロジェクト作成</Link>
                 </li>
-                <li className={location.pathname == '/chartview/home/new/task' ? css.menu_select : ''}>
-                    <Link to={{pathname: '/chartview/home/new/task', 
+                <li className={location.pathname == '/task/home/new/task' ? css.menu_select : ''}>
+                    <Link to={{pathname: '/task/home/new/task', 
                     state: { 
                         projectlist: this.props.data.projectlist,
                         projectoption: this.props.data.projectoption,
@@ -47,8 +47,8 @@ class Menu extends React.Component {
                         groupoption: this.props.data.groupoption
                     }}} >タスク作成</Link>
                 </li>
-                <li className={location.pathname == '/chartview/home/tasklist' ? css.menu_select : ''}>
-                    <Link to={{pathname: '/chartview/home/tasklist', 
+                <li className={location.pathname == '/task/home/tasklist' ? css.menu_select : ''}>
+                    <Link to={{pathname: '/task/home/tasklist', 
                     state: { 
                         projectlist: this.props.data.projectlist,
                         projectoption: this.props.data.projectoption,

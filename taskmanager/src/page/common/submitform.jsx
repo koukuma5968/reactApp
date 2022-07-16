@@ -8,7 +8,6 @@ class SubmitForm extends React.Component {
     constructor(props) {
         super(props);
     }
-    /* ログイン時チェック */
     login = (state) => {
         if (!InputCheck.checkAlphaNumber(state.userid)) {
             alert('ユーザIDは半角英数で入力してください。');
@@ -30,7 +29,7 @@ class SubmitForm extends React.Component {
             }
             ApiService.getproject(usercheck.data.userdata).then(projectret => {
                 this.props.history.push({
-                    pathname: '/chartview/home/dashboard',
+                    pathname: '/task/home/dashboard',
                     state: { 
                         projectlist: projectret.data.list, 
                         projectoption: projectret.data.option, 
@@ -42,7 +41,7 @@ class SubmitForm extends React.Component {
         });
     }
     create = () => {
-        this.props.history.push('/chartview/create');
+        this.props.history.push('/task/create');
     }
     userResults = (state) => {
         let errMsg = '';
@@ -81,14 +80,14 @@ class SubmitForm extends React.Component {
                 alert('ユーザ登録に失敗しました。');
                 return;
             }
-            this.props.history.push('/chartview/userresult');
+            this.props.history.push('/task/userresult');
         });
     }
     projectResults = (state, data) => {
         console.log('projectResults')
         ApiService.createProject(state, data.userMng).then(projectret => {
             this.props.history.push({
-                pathname: '/chartview/home/dashboard',
+                pathname: '/task/home/dashboard',
                 state: { 
                     projectlist: projectret.data.list, 
                     projectoption: projectret.data.option, 
@@ -102,7 +101,7 @@ class SubmitForm extends React.Component {
         console.log('taskResults')
         ApiService.createTask(state, data.userMng).then(projectret => {
             this.props.history.push({
-                pathname: '/chartview/home/dashboard',
+                pathname: '/task/home/dashboard',
                 state: { 
                     projectlist: projectret.data.list, 
                     projectoption: projectret.data.option, 

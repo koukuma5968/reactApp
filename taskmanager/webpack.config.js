@@ -48,17 +48,15 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: "./client.min.js"
+    filename: "./taskmanager.min.js"
   },
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
-      publicPath: '/chartview/',
+      publicPath: '/task/login/',
       serveIndex: true,
     },
-    historyApiFallback: {
-      index: '/chartview/'
-    }
+    historyApiFallback: true,
   },
   plugins: debug ? [] : [
     new webpack.optimize.OccurrenceOrderPlugin(),
