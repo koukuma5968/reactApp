@@ -6,8 +6,6 @@ import css from '../../common/css/top_style.scss';
 class LoginUser extends React.Component {
     constructor(props){
         super(props);
-        console.log("LoginUser");
-        console.log(props.userName);
     }
 
     render() {

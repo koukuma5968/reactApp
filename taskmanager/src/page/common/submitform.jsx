@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { withRouter } from 'react-router';
 import ApiService from '../../common/api/ApiService.jsx';
 import InputCheck from './inputcheck.jsx';
 
@@ -115,6 +113,9 @@ class SubmitForm extends React.Component {
         console.log('taskUpdate')
         ApiService.updateTask(statusType, task).then(ret => {
         });
+    }
+    logout = () => {
+        this.props.history.push('/task/login');
     }
 }
 export default SubmitForm

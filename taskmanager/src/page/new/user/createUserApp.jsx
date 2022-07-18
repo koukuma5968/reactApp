@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Form from '../../common/submitform.jsx';
 import c_css from '../../../common/css/common_style.scss';
 import css from '../../../common/css/new_style.scss';
@@ -39,7 +38,7 @@ class CreateUser extends React.Component {
 
                     <label>Eメールアドレス<span className={c_css.text_red}> ※</span></label>
                     <input className={css.user_item} type="email" value={this.email} 
-                        onChange={event => this.setState({email: event.target.value})} placeholder="@gmail.com or @alhinc.jp" />
+                        onChange={event => this.setState({email: event.target.value})}/>
                     <span className={c_css.p_t20}></span>
 
                     <label>ユーザID<span className={c_css.text_red}> ※</span></label>

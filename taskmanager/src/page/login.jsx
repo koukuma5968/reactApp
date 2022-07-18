@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Form from './common/submitform.jsx';
 import c_css from '../common/css/common_style.scss';
 import css from '../common/css/login_style.scss';
@@ -34,9 +33,6 @@ class Login extends React.Component {
                     maxLength="12" onChange={event => this.upPass(event)} placeholder="パスワード" />
                 <div>
                     <input className={`${css.login_item_bt} ${c_css.bt_color}`} type="button" value="ログイン" onClick={() => form.login(this.state)} />
-                </div>
-                <div>
-                    <a className={css.login_item_anc} href="">パスワードを忘れた場合</a>
                 </div>
                 <span className={c_css.p_t20}></span>
                 <div className={css.line}>

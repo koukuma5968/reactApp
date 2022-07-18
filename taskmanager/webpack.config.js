@@ -51,6 +51,7 @@ module.exports = {
     filename: "./taskmanager.min.js"
   },
   devServer: {
+    open: true,
     static: {
       directory: path.join(__dirname, 'dist'),
       publicPath: '/task/login/',

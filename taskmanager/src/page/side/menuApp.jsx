@@ -9,8 +9,6 @@ import css from '../../common/css/left_style.scss';
 class Menu extends React.Component {
     constructor(props){
         super(props);
-        console.log("menu");
-        console.log(props.data);
     }
     ShowLocation = () => {
         const location = useLocation();
